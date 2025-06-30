@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Expungement Assist – Clear Your Record</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e6f0ff; /* light blue */
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+    color: #222;
+  }
+  header img {
+    max-width: 200px;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    margin-bottom: 0.5rem;
+    color: #1a202c;
+  }
+  h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #2c5282;
+    font-weight: 600;
+  }
+  p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto 2rem auto;
+  }
+  a.button {
+    background-color: #6B46C1;
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(107, 70, 193, 0.4);
+    transition: background-color 0.3s ease;
+  }
+  a.button:hover {
+    background-color: #553C9A;
+  }
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 2.5s infinite;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  .whatsapp-btn img {
+    width: 30px;
+    height: 30px;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+  footer {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  @media (max-width: 480px) {
+    .button-container {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <img src="https://github.com/johandebeer21/firearm-application-landing/blob/main/JDB%20LA%20TRANSPARENT.png?raw=true" alt="Logo" />
+  </header>
+
+  <h1>Expungement Assist</h1>
+
+  <h2>Clear your criminal record the smart, stress-free way. Let us handle the paperwork, verification, and follow-up — all for a once-off fee of R3,000.</h2>
+
+  <p>Start by submitting your details below. We'll verify your eligibility for free before proceeding.</p>
+
+  <div class="button-container">
+    <a href="https://tally.so/r/n0YovB" target="_blank" rel="noopener" class="button">🧾 Apply Now – Expungement Assist (R3,000)</a>
+  </div>
+
+  <a href="https://wa.me/27785184118?text=Hi%20Johan%2C%20I'm%20interested%20in%20expungement%20assistance" 
+     target="_blank" 
+     rel="noopener" 
+     class="whatsapp-btn" 
+     aria-label="WhatsApp Chat">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+
+  <footer>
+    &copy; 2025 Johan de Beer – Expungement Assist | All rights reserved
+  </footer>
+</body>
+</html>
