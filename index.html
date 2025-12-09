@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Expungement Assist</title>
-
+<title>Expungement Assist – Clear Your Record</title>
 <style>
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,7 +14,12 @@
     color: #222;
     overflow-x: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ensures footer sticks to bottom */
   }
+
+  main { flex: 1; } /* main content takes remaining space */
 
   /* ⭐ Animated Geometric Background */
   .background-shapes {
@@ -98,7 +102,7 @@
     100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
   }
 
-  footer { margin-top: 3rem; font-size: 0.9rem; color: #888; }
+  footer { font-size: 0.9rem; color: #888; padding: 1rem 0; background: transparent; }
 
   @media (max-width: 480px) {
     .logo-hero { min-height: 100px; max-height: 140px; }
@@ -113,19 +117,23 @@
 <!-- Animated Background -->
 <div class="background-shapes" id="bgShapes"></div>
 
-<header class="logo-hero">
-  <img src="https://raw.githubusercontent.com/johandebeer21/digital-license-assist-method/refs/heads/main/1765147256043.png" alt="Logo" />
-</header>
+<main>
+  <header class="logo-hero">
+    <img src="https://raw.githubusercontent.com/johandebeer21/digital-license-assist-method/refs/heads/main/1765147256043.png" alt="Logo" />
+  </header>
 
-<h1>Expungement Assist</h1>
-<h2>
-  Clear your criminal record the smart, stress-free way. Let us handle the paperwork, verification, and follow-up — all for a once-off fee of R2,500.
-</h2>
-<p>Start by submitting your details below. We'll verify your eligibility for free before proceeding.</p>
+  <h1>Expungement Assist</h1>
 
-<div class="button-container">
-  <a href="https://tally.so/r/n0YovB" target="_blank" rel="noopener" class="button">🧾 Apply Now – Expungement Assist (R2,500)</a>
-</div>
+  <h2>
+    Clear your criminal record the smart, stress-free way. Let us handle the paperwork, verification, and follow-up — all for a once-off fee of R2,500.
+  </h2>
+
+  <p>Start by submitting your details below. We'll verify your eligibility for free before proceeding.</p>
+
+  <div class="button-container">
+    <a href="https://tally.so/r/n0YovB" target="_blank" rel="noopener" class="button">🧾 Apply Now – Expungement Assist (R2,500)</a>
+  </div>
+</main>
 
 <a href="https://wa.me/27785184118?text=Hi%20Johan%2C%20I'm%20interested%20in%20expungement%20assistance"
    target="_blank" rel="noopener" class="whatsapp-btn" aria-label="WhatsApp Chat">
@@ -140,11 +148,13 @@
   const shapes = ['diamond','triangle','hexagon','circle','square'];
   const bgContainer = document.getElementById('bgShapes');
 
+  // Generate multiple moving shapes
   for(let i=0;i<25;i++){
     const shapeType = shapes[Math.floor(Math.random()*shapes.length)];
     const div = document.createElement('div');
     div.className = 'shape '+shapeType;
 
+    // random start, mid, end positions
     const xStart = Math.random()*120-10+'vw';
     const yStart = Math.random()*120-10+'vh';
     const xMid = Math.random()*100+'vw';
