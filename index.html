@@ -12,12 +12,45 @@
     padding: 0;
     text-align: center;
     color: #222;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* ⭐ Animated Background Shapes */
+  .background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .shape {
+    position: absolute;
+    opacity: 0.2;
+    animation: moveShape linear infinite;
+  }
+
+  .diamond { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); background: #6B46C1; }
+  .triangle { clip-path: polygon(50% 0%, 100% 100%, 0% 100%); background: #805AD5; }
+  .hexagon { clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); background: #553C9A; }
+  .circle { border-radius: 50%; background: #9F7AEA; }
+  .square { background: #6B46C1; }
+
+  @keyframes moveShape {
+    0% { transform: translate(var(--x-start), var(--y-start)) rotate(0deg) scale(var(--scale)); opacity: 0; }
+    10% { opacity: 0.2; }
+    50% { transform: translate(var(--x-mid), var(--y-mid)) rotate(180deg) scale(calc(var(--scale) * 1.1)); opacity: 0.15; }
+    90% { opacity: 0.1; }
+    100% { transform: translate(var(--x-end), var(--y-end)) rotate(360deg) scale(var(--scale)); opacity: 0; }
   }
 
   /* Hero Section with animated gradient */
   .logo-hero {
     position: relative;
-    padding: 2.5rem 1rem;  /* reduced height */
+    padding: 2.5rem 1rem;
     text-align: center;
     border-radius: 0 0 25px 25px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -33,30 +66,16 @@
   }
 
   .logo-hero img {
-    width: 60%;        /* responsive large logo */
-    max-width: 400px;  
+    width: 60%;
+    max-width: 400px;
     height: auto;
     display: block;
     margin: 0 auto;
   }
 
-  h1 {
-    margin: 2rem 0 0.5rem 0;
-    color: #1a202c;
-  }
-
-  h2 {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    color: #2c5282;
-    font-weight: 600;
-  }
-
-  p {
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-    color: #555;
-  }
+  h1 { margin: 2rem 0 0.5rem 0; color: #1a202c; }
+  h2 { margin-top: 0; margin-bottom: 1.5rem; color: #2c5282; font-weight: 600; }
+  p { margin-bottom: 2rem; font-size: 1.1rem; color: #555; }
 
   .button-container {
     display: flex;
@@ -77,9 +96,7 @@
     transition: background-color 0.3s ease;
   }
 
-  a.button:hover {
-    background-color: #553C9A;
-  }
+  a.button:hover { background-color: #553C9A; }
 
   .whatsapp-btn {
     position: fixed;
@@ -98,10 +115,7 @@
     z-index: 1000;
   }
 
-  .whatsapp-btn img {
-    width: 30px;
-    height: 30px;
-  }
+  .whatsapp-btn img { width: 30px; height: 30px; }
 
   @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
@@ -109,29 +123,25 @@
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
   }
 
-  footer {
-    margin-top: 3rem;
-    font-size: 0.9rem;
-    color: #888;
-  }
+  footer { margin-top: 3rem; font-size: 0.9rem; color: #888; }
 
-  /* Responsive */
   @media (max-width: 480px) {
-    .button-container {
-      max-width: 100%;
-      padding: 0 1rem;
-    }
-    .logo-hero {
-      padding: 2rem 1rem;
-    }
-    .logo-hero img {
-      width: 70%;
-      max-width: 300px;
-    }
+    .button-container { max-width: 100%; padding: 0 1rem; }
+    .logo-hero { padding: 2rem 1rem; }
+    .logo-hero img { width: 70%; max-width: 300px; }
   }
 </style>
 </head>
 <body>
+
+  <!-- Animated Background -->
+  <div class="background-shapes">
+    <div class="shape diamond" style="--x-start:-10vw; --y-start:10vh; --x-mid:50vw; --y-mid:50vh; --x-end:110vw; --y-end:90vh; --scale:0.5; animation-duration:20s;"></div>
+    <div class="shape triangle" style="--x-start:110vw; --y-start:20vh; --x-mid:40vw; --y-mid:60vh; --x-end:-10vw; --y-end:80vh; --scale:0.4; animation-duration:25s;"></div>
+    <div class="shape hexagon" style="--x-start:50vw; --y-start:-10vh; --x-mid:70vw; --y-mid:50vh; --x-end:30vw; --y-end:110vh; --scale:0.45; animation-duration:22s;"></div>
+    <div class="shape circle" style="--x-start:-20vw; --y-start:70vh; --x-mid:60vw; --y-mid:30vh; --x-end:120vw; --y-end:-10vh; --scale:0.35; animation-duration:18s;"></div>
+    <div class="shape square" style="--x-start:120vw; --y-start:80vh; --x-mid:30vw; --y-mid:40vh; --x-end:-20vw; --y-end:-10vh; --scale:0.5; animation-duration:24s;"></div>
+  </div>
 
   <!-- Logo Hero Section -->
   <header class="logo-hero">
