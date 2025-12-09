@@ -7,31 +7,57 @@
 <style>
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #e6f0ff; /* light blue */
+    background: #e6f0ff;
     margin: 0;
-    padding: 2rem;
+    padding: 0;
     text-align: center;
     color: #222;
   }
-  header img {
-    max-width: 200px;
-    margin-bottom: 1rem;
+
+  /* Hero Section with animated gradient */
+  .logo-hero {
+    position: relative;
+    padding: 2.5rem 1rem;  /* reduced height */
+    text-align: center;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: linear-gradient(-45deg, #6B46C1, #553C9A, #805AD5, #9F7AEA);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
   }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .logo-hero img {
+    width: 60%;        /* responsive large logo */
+    max-width: 400px;  
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
   h1 {
-    margin-bottom: 0.5rem;
+    margin: 2rem 0 0.5rem 0;
     color: #1a202c;
   }
+
   h2 {
     margin-top: 0;
     margin-bottom: 1.5rem;
     color: #2c5282;
     font-weight: 600;
   }
+
   p {
     margin-bottom: 2rem;
     font-size: 1.1rem;
     color: #555;
   }
+
   .button-container {
     display: flex;
     flex-direction: column;
@@ -39,6 +65,7 @@
     max-width: 400px;
     margin: 0 auto 2rem auto;
   }
+
   a.button {
     background-color: #6B46C1;
     color: white;
@@ -49,9 +76,11 @@
     box-shadow: 0 4px 6px rgba(107, 70, 193, 0.4);
     transition: background-color 0.3s ease;
   }
+
   a.button:hover {
     background-color: #553C9A;
   }
+
   .whatsapp-btn {
     position: fixed;
     bottom: 20px;
@@ -68,30 +97,44 @@
     cursor: pointer;
     z-index: 1000;
   }
+
   .whatsapp-btn img {
     width: 30px;
     height: 30px;
   }
+
   @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
     70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
   }
+
   footer {
     margin-top: 3rem;
     font-size: 0.9rem;
     color: #888;
   }
+
+  /* Responsive */
   @media (max-width: 480px) {
     .button-container {
       max-width: 100%;
       padding: 0 1rem;
     }
+    .logo-hero {
+      padding: 2rem 1rem;
+    }
+    .logo-hero img {
+      width: 70%;
+      max-width: 300px;
+    }
   }
 </style>
 </head>
 <body>
-  <header>
+
+  <!-- Logo Hero Section -->
+  <header class="logo-hero">
     <img src="https://raw.githubusercontent.com/johandebeer21/digital-license-assist-method/refs/heads/main/1765147256043.png" alt="Logo" />
   </header>
 
@@ -116,5 +159,6 @@
   <footer>
     &copy; 2025 Johan de Beer – Expungement Assist | All rights reserved
   </footer>
+
 </body>
 </html>
